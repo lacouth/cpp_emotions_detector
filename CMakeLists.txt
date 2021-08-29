@@ -14,5 +14,5 @@ link_directories(${OpenCV_LIBRARY_DIRS})
 add_definitions(${OpenCV_DEFINITIONS})
 
 
-add_executable(face_detector src/main.cpp)
-target_link_libraries(face_detector ${OpenCV_LIBRARIES})
+add_executable(emotion_detector src/main.cpp)
+target_link_libraries(emotion_detector ${OpenCV_LIBRARIES})

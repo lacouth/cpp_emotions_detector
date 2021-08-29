@@ -3,6 +3,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
+#include <algorithm>
 
 using namespace cv;
 using namespace std;
@@ -21,6 +22,8 @@ const size_t inWidth = 300;
 const size_t inHeight = 300;
 const double inScaleFactor = 1.0;
 const Scalar meanVal(104.0, 177.0, 123.0);
+
+const string emotions[]{"Angry" , "Disgust" , "Fear" , "Happy"  , "Neutral" ,  "Sad" , "Surprise"};
 
 int main(int argc, char** argv)
 {
@@ -111,6 +114,21 @@ int main(int argc, char** argv)
                 Rect object((int)xLeftBottom, (int)yLeftBottom,
                             (int)(xRightTop - xLeftBottom),
                             (int)(yRightTop - yLeftBottom));
+                                
+                Mat cropped = frame(Range(yLeftBottom,yRightTop),Range(xLeftBottom,xRightTop));
+                
+                Mat inputBlob2 = blobFromImage(cropped, inScaleFactor,
+                                      Size(256, 256), meanVal, false, false); //Convert Mat to batch of images
+        
+                //! [Set input blob]
+                emotion_net.setInput(std::move(inputBlob2), "data"); //set the network input
+                
+                //! [Make forward pass]
+                vector<float> detection2(emotion_net.forward("prob")); //compute output
+                int idx = max_element(detection2.begin(), detection2.end()) - detection2.begin();
+
+                cout << emotions[idx] << endl;
+
 
                 rectangle(frame, object, Scalar(0, 255, 0));
 
