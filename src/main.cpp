@@ -2,60 +2,44 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+
 #include <iostream>
 #include <algorithm>
+#include <vector>
+
+#include "facedetector.h"
+#include "face.h"
+#include "gui.h"
 
 using namespace cv;
 using namespace std;
 using namespace cv::dnn;
 
 // Set up configuration
-float confidenceThreshold = 0.5;
-String modelConfiguration = "../src/data/model/deploy.prototxt";
-String modelBinary = "../src/data/model/res10_300x300_ssd_iter_140000.caffemodel";
+// float confidenceThreshold = 0.5;
+// String modelConfiguration = "../src/data/model/deploy.prototxt";
+// String modelBinary = "../src/data/model/res10_300x300_ssd_iter_140000.caffemodel";
 
-String emotionModelConfiguration = "../src/data/model/deploy_emotion.prototxt";
-String emotionModelBinary = "../src/data/model/EmotiW_VGG_S.caffemodel";
+// String emotionModelConfiguration = "../src/data/model/deploy_emotion.prototxt";
+// String emotionModelBinary = "../src/data/model/EmotiW_VGG_S.caffemodel";
 
 
-const size_t inWidth = 300;
-const size_t inHeight = 300;
-const double inScaleFactor = 1.0;
-const Scalar meanVal(104.0, 177.0, 123.0);
+// const size_t inWidth = 300;
+// const size_t inHeight = 300;
+// const double inScaleFactor = 1.0;
+// const Scalar meanVal(104.0, 177.0, 123.0);
 
-const string emotions[]{"Angry" , "Disgust" , "Fear" , "Happy"  , "Neutral" ,  "Sad" , "Surprise"};
+// const string emotions[]{"Angry" , "Disgust" , "Fear" , "Happy"  , "Neutral" ,  "Sad" , "Surprise"};
 
 int main(int argc, char** argv)
 {
     
     // Init DNN
-    dnn::Net net = readNetFromCaffe(modelConfiguration, modelBinary);
-    dnn::Net emotion_net = readNetFromCaffe(emotionModelConfiguration, emotionModelBinary);
+    // Net net = readNetFromCaffe(modelConfiguration, modelBinary);
+    // dnn::Net emotion_net = readNetFromCaffe(emotionModelConfiguration, emotionModelBinary);
+    FaceDetector facedetector(300,300,1.0,0.5);
     
-    
-    if (net.empty())
-    {
-        cerr << "Can't load network by using the following files: " << endl;
-        cerr << "prototxt:   " << modelConfiguration << endl;
-        cerr << "caffemodel: " << modelBinary << endl;
-        cerr << "Models are available here:" << endl;
-        cerr << "<OPENCV_SRC_DIR>/samples/dnn/face_detector" << endl;
-        cerr << "or here:" << endl;
-        cerr << "https://github.com/opencv/opencv/tree/master/samples/dnn/face_detector" << endl;
-        exit(-1);
-    }
-
-      if (emotion_net.empty())
-    {
-        cerr << "Can't load network by using the following files: " << endl;
-        cerr << "prototxt:   " << modelConfiguration << endl;
-        cerr << "caffemodel: " << modelBinary << endl;
-        cerr << "Models are available here:" << endl;
-        cerr << "<OPENCV_SRC_DIR>/samples/dnn/face_detector" << endl;
-        cerr << "or here:" << endl;
-        cerr << "https://github.com/opencv/opencv/tree/master/samples/dnn/face_detector" << endl;
-        exit(-1);
-    }
+   
 
     VideoCapture cap;
     if (argc==1)
@@ -88,64 +72,68 @@ int main(int argc, char** argv)
             break;
         }
 
+        auto faces = facedetector.detect(frame);
+        GUI::draw_rectangles(faces,frame);
+
+
         //! [Prepare blob]
-        Mat inputBlob = blobFromImage(frame, inScaleFactor,
-                                      Size(inWidth, inHeight), meanVal, false, false); //Convert Mat to batch of images
+       // Mat inputBlob = blobFromImage(frame, inScaleFactor,
+        //                              Size(inWidth, inHeight), meanVal, false, false); //Convert Mat to batch of images
         
         //! [Set input blob]
-        net.setInput(inputBlob, "data"); //set the network input
+        //net.setInput(inputBlob, "data"); //set the network input
         
         //! [Make forward pass]
-        Mat detection = net.forward("detection_out"); //compute output
+        //Mat detection = net.forward("detection_out"); //compute output
         
-        Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
+        //Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
-        for(int i = 0; i < detectionMat.rows; i++)
-        {
-            float confidence = detectionMat.at<float>(i, 2);
+        // for(int i = 0; i < detectionMat.rows; i++)
+        // {
+        //     float confidence = detectionMat.at<float>(i, 2);
 
-            if(confidence > confidenceThreshold)
-            {
-                int xLeftBottom = static_cast<int>(detectionMat.at<float>(i, 3) * frame.cols);
-                int yLeftBottom = static_cast<int>(detectionMat.at<float>(i, 4) * frame.rows);
-                int xRightTop = static_cast<int>(detectionMat.at<float>(i, 5) * frame.cols);
-                int yRightTop = static_cast<int>(detectionMat.at<float>(i, 6) * frame.rows);
+        //     if(confidence > confidenceThreshold)
+        //     {
+        //         int xLeftBottom = static_cast<int>(detectionMat.at<float>(i, 3) * frame.cols);
+        //         int yLeftBottom = static_cast<int>(detectionMat.at<float>(i, 4) * frame.rows);
+        //         int xRightTop = static_cast<int>(detectionMat.at<float>(i, 5) * frame.cols);
+        //         int yRightTop = static_cast<int>(detectionMat.at<float>(i, 6) * frame.rows);
 
-                Rect object((int)xLeftBottom, (int)yLeftBottom,
-                            (int)(xRightTop - xLeftBottom),
-                            (int)(yRightTop - yLeftBottom));
+        //         Rect object((int)xLeftBottom, (int)yLeftBottom,
+        //                     (int)(xRightTop - xLeftBottom),
+        //                     (int)(yRightTop - yLeftBottom));
                                 
-                Mat cropped = frame(Range(yLeftBottom,yRightTop),Range(xLeftBottom,xRightTop));
+        //         //Mat cropped = frame(Range(yLeftBottom,yRightTop),Range(xLeftBottom,xRightTop));
                 
-                Mat inputBlob2 = blobFromImage(cropped, inScaleFactor,
-                                      Size(256, 256), meanVal, false, false); //Convert Mat to batch of images
+        //         //Mat inputBlob2 = blobFromImage(cropped, inScaleFactor,
+        //          //                     Size(256, 256), meanVal, false, false); //Convert Mat to batch of images
         
-                //! [Set input blob]
-                emotion_net.setInput(std::move(inputBlob2), "data"); //set the network input
+        //         //! [Set input blob]
+        //         //emotion_net.setInput(std::move(inputBlob2), "data"); //set the network input
                 
-                //! [Make forward pass]
-                vector<float> detection2(emotion_net.forward("prob")); //compute output
-                int idx = max_element(detection2.begin(), detection2.end()) - detection2.begin();
+        //         //! [Make forward pass]
+        //         //vector<float> detection2(emotion_net.forward("prob")); //compute output
+        //         //int idx = max_element(detection2.begin(), detection2.end()) - detection2.begin();
 
-                cout << emotions[idx] << endl;
+        //         //cout << emotions[idx] << endl;
 
 
-                rectangle(frame, object, Scalar(0, 255, 0));
+        //         rectangle(frame, object, Scalar(0, 255, 0));
 
-                stringstream ss;
-                ss.str("");
-                ss << confidence;
-                String conf(ss.str());
-                String label = "Face: " + conf;
-                int baseLine = 0;
-                Size labelSize = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
-                rectangle(frame, Rect(Point(xLeftBottom, yLeftBottom - labelSize.height),
-                                      Size(labelSize.width, labelSize.height + baseLine)),
-                          Scalar(255, 255, 255), FILLED);
-                putText(frame, label, Point(xLeftBottom, yLeftBottom),
-                        FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0,0,0));
-            }
-        }
+        //         stringstream ss;
+        //         ss.str("");
+        //         ss << confidence;
+        //         String conf(ss.str());
+        //         String label = "Face: " + conf;
+        //         int baseLine = 0;
+        //         Size labelSize = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
+        //         rectangle(frame, Rect(Point(xLeftBottom, yLeftBottom - labelSize.height),
+        //                               Size(labelSize.width, labelSize.height + baseLine)),
+        //                   Scalar(255, 255, 255), FILLED);
+        //         putText(frame, label, Point(xLeftBottom, yLeftBottom),
+        //                 FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0,0,0));
+        //     }
+        // }
 
         imshow("detections", frame);
         if (waitKey(1) >= 0) break;
