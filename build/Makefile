@@ -142,6 +142,33 @@ emotion_detector/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/emotion_detector.dir/build.make CMakeFiles/emotion_detector.dir/build
 .PHONY : emotion_detector/fast
 
+src/emotiondetector.o: src/emotiondetector.cpp.o
+
+.PHONY : src/emotiondetector.o
+
+# target to build an object file
+src/emotiondetector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/emotion_detector.dir/build.make CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o
+.PHONY : src/emotiondetector.cpp.o
+
+src/emotiondetector.i: src/emotiondetector.cpp.i
+
+.PHONY : src/emotiondetector.i
+
+# target to preprocess a source file
+src/emotiondetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/emotion_detector.dir/build.make CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.i
+.PHONY : src/emotiondetector.cpp.i
+
+src/emotiondetector.s: src/emotiondetector.cpp.s
+
+.PHONY : src/emotiondetector.s
+
+# target to generate assembly for a file
+src/emotiondetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/emotion_detector.dir/build.make CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.s
+.PHONY : src/emotiondetector.cpp.s
+
 src/face.o: src/face.cpp.o
 
 .PHONY : src/face.o
@@ -259,6 +286,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... emotion_detector"
+	@echo "... src/emotiondetector.o"
+	@echo "... src/emotiondetector.i"
+	@echo "... src/emotiondetector.s"
 	@echo "... src/face.o"
 	@echo "... src/face.i"
 	@echo "... src/face.s"

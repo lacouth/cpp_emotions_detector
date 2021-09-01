@@ -6,67 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/lacouth/codes/cpp_emotions_detector/src/face.cpp
-face.h
-/home/lacouth/codes/cpp_emotions_detector/src/face.h
+/home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.cpp
+emotiondetector.h
+/home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.h
 
-/home/lacouth/codes/cpp_emotions_detector/src/face.h
-string
--
-opencv2/imgproc.hpp
--
-
-/home/lacouth/codes/cpp_emotions_detector/src/facedetector.cpp
-facedetector.h
-/home/lacouth/codes/cpp_emotions_detector/src/facedetector.h
-
-/home/lacouth/codes/cpp_emotions_detector/src/facedetector.h
-string
--
+/home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.h
 iostream
 -
-vector
--
-memory
--
-opencv2/dnn.hpp
--
-opencv2/imgproc.hpp
--
-face.h
-/home/lacouth/codes/cpp_emotions_detector/src/face.h
-
-/home/lacouth/codes/cpp_emotions_detector/src/gui.cpp
-gui.h
-/home/lacouth/codes/cpp_emotions_detector/src/gui.h
-
-/home/lacouth/codes/cpp_emotions_detector/src/gui.h
-opencv2/highgui.hpp
+string
 -
 vector
--
-face.h
-/home/lacouth/codes/cpp_emotions_detector/src/face.h
-
-/home/lacouth/codes/cpp_emotions_detector/src/main.cpp
-opencv2/dnn.hpp
--
-opencv2/imgproc.hpp
--
-opencv2/highgui.hpp
--
-iostream
 -
 algorithm
 -
-vector
+opencv2/dnn.hpp
 -
-facedetector.h
-/home/lacouth/codes/cpp_emotions_detector/src/facedetector.h
 face.h
 /home/lacouth/codes/cpp_emotions_detector/src/face.h
-gui.h
-/home/lacouth/codes/cpp_emotions_detector/src/gui.h
+
+/home/lacouth/codes/cpp_emotions_detector/src/face.h
+string
+-
+opencv2/imgproc.hpp
+-
 
 /usr/local/include/opencv4/opencv2/core.hpp
 opencv2/core/cvdef.h
@@ -438,18 +400,6 @@ opencv2/dnn.hpp
 
 /usr/local/include/opencv4/opencv2/dnn/version.hpp
 
-/usr/local/include/opencv4/opencv2/highgui.hpp
-opencv2/core.hpp
-/usr/local/include/opencv4/opencv2/opencv2/core.hpp
-opencv2/imgcodecs.hpp
-/usr/local/include/opencv4/opencv2/opencv2/imgcodecs.hpp
-opencv2/videoio.hpp
-/usr/local/include/opencv4/opencv2/opencv2/videoio.hpp
-
-/usr/local/include/opencv4/opencv2/imgcodecs.hpp
-opencv2/core.hpp
-/usr/local/include/opencv4/opencv2/opencv2/core.hpp
-
 /usr/local/include/opencv4/opencv2/imgproc.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
@@ -461,8 +411,4 @@ opencv2/imgproc.hpp
 /usr/local/include/opencv4/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv4/opencv2/opencv_modules.hpp
-
-/usr/local/include/opencv4/opencv2/videoio.hpp
-opencv2/core.hpp
-/usr/local/include/opencv4/opencv2/opencv2/core.hpp
 

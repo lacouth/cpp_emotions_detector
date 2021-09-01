@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o"
   "CMakeFiles/emotion_detector.dir/src/face.cpp.o"
   "CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o"
   "CMakeFiles/emotion_detector.dir/src/gui.cpp.o"

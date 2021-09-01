@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "facedetector.h"
+#include "emotiondetector.h"
 #include "face.h"
 #include "gui.h"
 
@@ -37,7 +38,8 @@ int main(int argc, char** argv)
     // Init DNN
     // Net net = readNetFromCaffe(modelConfiguration, modelBinary);
     // dnn::Net emotion_net = readNetFromCaffe(emotionModelConfiguration, emotionModelBinary);
-    FaceDetector facedetector(300,300,1.0,0.5);
+    FaceDetector faceDetector(300,300,1.0,0.5);
+    EmotionDetector emotionDetector;
     
    
 
@@ -72,7 +74,13 @@ int main(int argc, char** argv)
             break;
         }
 
-        auto faces = facedetector.detect(frame);
+        auto faces = faceDetector.detect(frame);
+        
+        for(Face &face : faces){
+            emotionDetector.detectEmotion(face);
+        }
+
+        
         GUI::draw_rectangles(faces,frame);
 
 

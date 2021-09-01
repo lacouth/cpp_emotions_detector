@@ -76,9 +76,22 @@ include CMakeFiles/emotion_detector.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/emotion_detector.dir/flags.make
 
+CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o: CMakeFiles/emotion_detector.dir/flags.make
+CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o: ../src/emotiondetector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o -c /home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.cpp
+
+CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.cpp > CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.i
+
+CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.cpp -o CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.s
+
 CMakeFiles/emotion_detector.dir/src/face.cpp.o: CMakeFiles/emotion_detector.dir/flags.make
 CMakeFiles/emotion_detector.dir/src/face.cpp.o: ../src/face.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/emotion_detector.dir/src/face.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/emotion_detector.dir/src/face.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/emotion_detector.dir/src/face.cpp.o -c /home/lacouth/codes/cpp_emotions_detector/src/face.cpp
 
 CMakeFiles/emotion_detector.dir/src/face.cpp.i: cmake_force
@@ -91,7 +104,7 @@ CMakeFiles/emotion_detector.dir/src/face.cpp.s: cmake_force
 
 CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o: CMakeFiles/emotion_detector.dir/flags.make
 CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o: ../src/facedetector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o -c /home/lacouth/codes/cpp_emotions_detector/src/facedetector.cpp
 
 CMakeFiles/emotion_detector.dir/src/facedetector.cpp.i: cmake_force
@@ -104,7 +117,7 @@ CMakeFiles/emotion_detector.dir/src/facedetector.cpp.s: cmake_force
 
 CMakeFiles/emotion_detector.dir/src/gui.cpp.o: CMakeFiles/emotion_detector.dir/flags.make
 CMakeFiles/emotion_detector.dir/src/gui.cpp.o: ../src/gui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/emotion_detector.dir/src/gui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/emotion_detector.dir/src/gui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/emotion_detector.dir/src/gui.cpp.o -c /home/lacouth/codes/cpp_emotions_detector/src/gui.cpp
 
 CMakeFiles/emotion_detector.dir/src/gui.cpp.i: cmake_force
@@ -117,7 +130,7 @@ CMakeFiles/emotion_detector.dir/src/gui.cpp.s: cmake_force
 
 CMakeFiles/emotion_detector.dir/src/main.cpp.o: CMakeFiles/emotion_detector.dir/flags.make
 CMakeFiles/emotion_detector.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/emotion_detector.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/emotion_detector.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/emotion_detector.dir/src/main.cpp.o -c /home/lacouth/codes/cpp_emotions_detector/src/main.cpp
 
 CMakeFiles/emotion_detector.dir/src/main.cpp.i: cmake_force
@@ -130,6 +143,7 @@ CMakeFiles/emotion_detector.dir/src/main.cpp.s: cmake_force
 
 # Object files for target emotion_detector
 emotion_detector_OBJECTS = \
+"CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o" \
 "CMakeFiles/emotion_detector.dir/src/face.cpp.o" \
 "CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o" \
 "CMakeFiles/emotion_detector.dir/src/gui.cpp.o" \
@@ -138,6 +152,7 @@ emotion_detector_OBJECTS = \
 # External object files for target emotion_detector
 emotion_detector_EXTERNAL_OBJECTS =
 
+emotion_detector: CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o
 emotion_detector: CMakeFiles/emotion_detector.dir/src/face.cpp.o
 emotion_detector: CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o
 emotion_detector: CMakeFiles/emotion_detector.dir/src/gui.cpp.o
@@ -159,7 +174,7 @@ emotion_detector: /usr/local/lib/libopencv_flann.so.4.5.3
 emotion_detector: /usr/local/lib/libopencv_imgproc.so.4.5.3
 emotion_detector: /usr/local/lib/libopencv_core.so.4.5.3
 emotion_detector: CMakeFiles/emotion_detector.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable emotion_detector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable emotion_detector"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/emotion_detector.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

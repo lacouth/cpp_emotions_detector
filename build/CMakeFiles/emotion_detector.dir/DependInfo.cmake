@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.cpp" "/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles/emotion_detector.dir/src/emotiondetector.cpp.o"
   "/home/lacouth/codes/cpp_emotions_detector/src/face.cpp" "/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles/emotion_detector.dir/src/face.cpp.o"
   "/home/lacouth/codes/cpp_emotions_detector/src/facedetector.cpp" "/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles/emotion_detector.dir/src/facedetector.cpp.o"
   "/home/lacouth/codes/cpp_emotions_detector/src/gui.cpp" "/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles/emotion_detector.dir/src/gui.cpp.o"
