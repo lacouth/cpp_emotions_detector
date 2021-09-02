@@ -34,4 +34,4 @@
 # DNN Models
 *.caffemodel
 
-build/**
+build/

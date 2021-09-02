@@ -1,3 +1,0 @@
-/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles/rebuild_cache.dir
-/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles/edit_cache.dir
-/home/lacouth/codes/cpp_emotions_detector/build/CMakeFiles/emotion_detector.dir
