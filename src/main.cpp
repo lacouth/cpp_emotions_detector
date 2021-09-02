@@ -16,53 +16,58 @@
 
 int main(int argc, char** argv)
 {
-    
-    // Init DNN
-
+    cv::VideoCapture cap;
+    cv::Mat frame;
     FaceDetector faceDetector(300,300,1.0,0.5);
     EmotionDetector emotionDetector;
-    std::vector<std::future<void>> futures;
+    std::vector<Face> faces;
 
-    cv::VideoCapture cap;
-    if (argc==1)
-    {
-        cap = cv::VideoCapture(0);
-        if(!cap.isOpened())
-        {
-            std::cout << "Couldn't find  default camera" << std::endl;
-            return -1;
-        }
-    }
-    else
-    {
-        cap.open(argv[1]);
-        if(!cap.isOpened())
-        {
-            std::cout << "Couldn't open image or video: " << argv[1] << std::endl;
-            return -1;
-        }
-    }
-
-    while(true)
-    {
-        cv::Mat frame;
-        cap >> frame; 
-
-        if (frame.empty())
-        {
-            cv::waitKey();
+    switch (getopt(argc,argv,"wi:v:")){
+        case 'w':
+            cap = cv::VideoCapture(0);
+            if(!cap.isOpened()){
+                std::cout << "Couldn't find default camera" << std::endl;
+                return -1;
+            }
+            cap >> frame;
             break;
-        }
+        case 'i':
+            frame = cv::imread(optarg);
+            if(frame.data == NULL){
+                std::cout << "Couldn't open image" << std::endl;
+                return -1;
+            }
+            
+            break;
+        case 'v':
+            cap = cv::VideoCapture(optarg);
+            if(!cap.isOpened()){
+                std::cout << "Couldn't open video: " << optarg << std::endl;
+                return -1;
+            }
+            break;
+
+        default:
+            std::cout << "Invalid option" << std::endl;
+            break;
+    }
+   
+
+    while(true){
 
         auto faces = faceDetector.detect(frame);
         emotionDetector.detect(faces);
-                
 
         GUI::draw_rectangles(faces,frame);
+        cv::imshow("Emotion Detector", frame);
 
-        cv::imshow("detections", frame);
         if (cv::waitKey(1) >= 0) break;
 
+        cap >> frame;
+        if(frame.data==NULL){
+            cv::waitKey(0);
+            break;            
+        } 
     }
 
     return 0;
