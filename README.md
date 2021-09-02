@@ -20,7 +20,7 @@ This project follows Object Oriented Programming (OOP) and C++ features (e.g. ST
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 * OpenCV >= 4.5.3
-  * The OpenCV 4.5.3 source code can be found [here](https://github.com/opencv/opencv/tree/4.5.3)
+  * The OpenCV 4.1 source code can be found [here](https://github.com/opencv/opencv/tree/4.1)
 
 ## Requisites
 
