@@ -2,8 +2,8 @@
 
 EmotionDetector::EmotionDetector(){
 
-    const std::string _modelConfiguration = "../src/data/model/deploy_emotion.prototxt";
-    const std::string _modelBinary = "../src/data/model/EmotiW_VGG_S.caffemodel";
+    const std::string _modelConfiguration = "../src/data/models/deploy_emotion.prototxt";
+    const std::string _modelBinary = "../src/data/models/EmotiW_VGG_S.caffemodel";
         
     _net = cv::dnn::readNetFromCaffe(_modelConfiguration, _modelBinary);
     

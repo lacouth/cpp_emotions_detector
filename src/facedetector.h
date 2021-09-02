@@ -12,8 +12,8 @@
 class FaceDetector{
 
     private:
-        const std::string _modelConfiguration = "../src/data/model/deploy.prototxt";
-        const std::string _modelBinary = "../src/data/model/res10_300x300_ssd_iter_140000.caffemodel";
+        const std::string _modelConfiguration = "../src/data/models/deploy.prototxt";
+        const std::string _modelBinary = "../src/data/models/res10_300x300_ssd_iter_140000.caffemodel";
         cv::dnn::Net _net;
         size_t _width;
         size_t _height;

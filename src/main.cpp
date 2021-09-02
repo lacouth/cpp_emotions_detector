@@ -45,6 +45,7 @@ int main(int argc, char** argv)
                 std::cout << "Couldn't open video: " << optarg << std::endl;
                 return -1;
             }
+            cap >> frame;
             break;
 
         default:

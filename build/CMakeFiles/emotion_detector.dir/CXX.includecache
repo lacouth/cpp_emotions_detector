@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.cpp
+emotiondetector.h
+/home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.h
+
 /home/lacouth/codes/cpp_emotions_detector/src/emotiondetector.h
 iostream
 -
@@ -31,6 +35,10 @@ string
 -
 opencv2/imgproc.hpp
 -
+
+/home/lacouth/codes/cpp_emotions_detector/src/facedetector.cpp
+facedetector.h
+/home/lacouth/codes/cpp_emotions_detector/src/facedetector.h
 
 /home/lacouth/codes/cpp_emotions_detector/src/facedetector.h
 string
