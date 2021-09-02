@@ -24,7 +24,7 @@ This project follows Object Oriented Programming (OOP) and C++ features (e.g. ST
 
 ## Requisites
 
-This project uses two [CAFFE](https://caffe.berkeleyvision.org/) pre-trained models for face and emotion detection, and these models should be first downloaded and **MUST** be stored in the src/models/ directory.
+This project uses two [CAFFE](https://caffe.berkeleyvision.org/) pre-trained models for face and emotion detection, and these models should be first downloaded and **MUST** be stored in the src/data/models/ directory.
 
 ### Face Detector Model
 
