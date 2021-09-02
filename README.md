@@ -30,13 +30,13 @@ This project uses two [CAFFE](https://caffe.berkeleyvision.org/) pre-trained mod
 
 The face detector model is at the following address:
 
-`https://github.com/opencv/opencv_3rdparty/blob/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel`
+[res10_300x300_ssd_iter_140000.caffemodel](https://github.com/opencv/opencv_3rdparty/blob/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel)
 
 ### Emotion Classification
 
 The emotion classification is at the following address:
 
-`https://gist.github.com/GilLevi/54aee1b8b0397721aa4b`
+[EmotiW_VGG_S.caffemodel](https://drive.google.com/open?id=0BydFau0VP3XSNVYtWnNPMU1TOGM)
 
 The code implemented uses the **VGG_S_rgb/EmotiW_VGG_S.caffemodel**  which is optimized for RGB images.
 
@@ -65,7 +65,8 @@ After the window is created press any key to quit.
 ## References
 
   * https://talhassner.github.io/home/publication/2016_ECCV_1
-  * https://talhassner.github.io/home/publication/2015_ICMI 
+  * https://talhassner.github.io/home/publication/2015_ICMI
+  * https://gist.github.com/GilLevi/54aee1b8b0397721aa4b
 
 _be happy_
 
