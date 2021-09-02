@@ -39,8 +39,11 @@ std::vector<Face> FaceDetector::detect(cv::Mat &image){
             face._yLeftBottom = static_cast<int>(detectionMat.at<float>(i, 4) * image.rows);
             face._xRightTop = static_cast<int>(detectionMat.at<float>(i, 5) * image.cols);
             face._yRightTop = static_cast<int>(detectionMat.at<float>(i, 6) * image.rows);
-            face._face = image(cv::Range(face._yLeftBottom,face._yRightTop),cv::Range(face._xLeftBottom,face._xRightTop));
-            faces.emplace_back(std::move(face));
+        
+            if(face._yRightTop <= image.rows && face._xRightTop <=image.cols && face._xLeftBottom > 0 && face._yLeftBottom > 0){
+                face._face = image(cv::Range(face._yLeftBottom,face._yRightTop),cv::Range(face._xLeftBottom,face._xRightTop));
+                faces.emplace_back(std::move(face));
+            }
         }
     }
     return faces;
