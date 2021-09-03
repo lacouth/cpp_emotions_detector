@@ -1,8 +1,6 @@
 # CPP Emotion Detector
 
-This project is the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213).
-
-It aims to detect faces and emotions from an image, a sequence of frames, or directly from a webcam using two pre-trained Deep Neural Networks.
+This project aims to use C++ and OpenCV to detect faces and emotions from an image, a sequence of frames, or directly from a webcam using two pre-trained Deep Neural Networks.
 
 ![The Beatles](src/data/images/beatles_emotions.png)
 
